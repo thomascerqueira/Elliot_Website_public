@@ -1,0 +1,23 @@
+@import "styles.css";
+
+.container-progress {
+    height: 20px;
+    width: 50%;
+    background-color: #e0e0de;
+    border-radius: 50px;
+    margin-left: 2em;
+    margin-top: 2em;
+}
+
+.fill {
+    background-color: var(--secondary-color-light);
+    border-radius: inherit;
+    text-align: right;
+    height: 100%
+}
+
+.text {
+    padding: 0.5em;
+    color: white;
+    font-weight: bold;
+}

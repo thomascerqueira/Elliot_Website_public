@@ -1,0 +1,124 @@
+@import './styles.css';
+
+.add {
+    margin-left: 2em;
+}
+
+/*Settings page*/
+.div-new-user {
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+    justify-content: center;
+    gap: 0.5em;
+    margin: 0.5em;
+
+    transition: flex-direction 1s
+}
+
+.div-new-user input {
+    font-size: 20px;
+    color: var(--secondary-color);
+
+    border: var(--border);
+
+    padding: 0.5em;
+    width: auto;
+}
+
+.div-new-user input::placeholder {
+    color: var(--text-color)
+}
+
+.div-new-user button {
+    background-color: var(--primary-color);
+    font-size: 15px;
+    padding: 20px;
+    border: var(--border);
+
+    cursor: pointer;
+    transition: transform 200ms;
+
+    color: var(--text-color);
+}
+
+.div-new-user button:hover {
+    background-color: var(--primary-color-darker);
+
+    transform: scale(1.02);
+    transition: transform 200ms
+}
+
+
+/*Users tab*/
+.all-user {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+.user {
+    display: grid;
+    gap: 0.5em;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+}
+
+.user span {
+    background-color: var(--light-color);
+    padding: 0.5em;
+
+    color: var(--text-color);
+    max-width: 50%;
+    overflow: hidden;
+    border: var(--border);
+}
+
+.user.title {
+    margin-bottom: 0.5em
+}
+
+.user h3 {
+    background-color: var(--light-color);
+    padding: 0.5em;
+
+    color: var(--text-color);
+    margin: 0.5em;
+    border: var(--border);
+}
+
+.loader {
+    position: relative;
+    width: 2em;
+    aspect-ratio: 1/1;
+    height: 100%;
+    margin-left: 2em;
+    margin-top: 2em;
+}
+
+.loader:after {
+    content: " ";
+    display: block;
+    aspect-ratio: 1/1;
+    height: 100%;
+    border-radius: 50%;
+    border: 6px solid #fff;
+    border-color: var(--text-color) transparent var(--text-color) transparent;
+    animation: loader 1.2s linear infinite;
+}
+
+@media (max-width: 1200px) {
+    .div-new-user {
+        flex-direction: column;
+    }
+}
+
+@keyframes loader {
+    0% {
+        transform: translate(-50%,-50%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%,-50%) rotate(360deg);
+    }
+}

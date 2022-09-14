@@ -1,0 +1,145 @@
+@import 'styles.css';
+
+/*Navbar*/
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 8vh;
+    z-index: 10;
+    border: none;
+    justify-self: center;
+}
+
+.logo {
+    color: var(--text-color);
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 25px;
+    font-weight: 100;
+    font-family: 'Libre Baskerville', serif;
+}
+
+
+/*Navbar items*/
+
+.nav-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    transition: all 400ms;
+    z-index: 10;
+    border: none;
+    border-radius: 0;
+}
+
+.nav-item a {
+    margin: 0 2em;
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    gap: 0.5em;
+    color: var(--text-color);
+}
+
+.nav-item a span {
+    font-size: var(--title-font-size);
+    color: var(--text-color);
+}
+
+.nav-item a h3 {
+    display: inline-block;
+    white-space: nowrap;
+}
+
+/*burger navbar*/
+.burger {
+    position: sticky;
+    display: none;
+    cursor: pointer;
+    transition: 400ms;
+}
+
+.burger.toggle {
+    transform: rotate(90deg);
+    transition: 400ms cubic-bezier(0, 0.03, 0.42, 2.22)
+}
+
+.burger div {
+    width: 25px;
+    height: 5px;
+    background-color: white;
+    margin: 5px;
+    border: none;
+    /* border-radius: 20px; */
+}
+
+
+/*responsive*/
+@media screen and (max-width: 1300px) {
+    .logo {
+        padding: 0.5em;
+        font-size: 0.8em
+    }
+
+    .nav-item {
+        width: 60%;
+        transition: all 400ms
+    }
+
+    .nav-item a h3 {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    nav {
+        justify-content: space-between;
+    }
+
+    .nav-item {
+        overflow: hidden;
+        z-index: 11;
+        position: absolute;
+        right: 0;
+        height: 92vh;
+        top: 8vh;
+        background-color: var(--primary-color);
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        transform: translateX(100%)
+    }
+
+    .logo {
+        margin-left: 2em;
+    }
+
+    .nav-item li {
+        opacity: 0;
+    }
+
+    .nav-item a h3 {
+        display: inline-block;
+    }
+
+    .burger {
+        right: 0;
+        display: block;
+        margin-right: 2em;
+    }
+}
+
+.nav-active {
+    transform: translateX(0%)
+}
+
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(50px)
+    } to {
+          opacity: 1;
+          transform: translateX(0px)
+      }
+}

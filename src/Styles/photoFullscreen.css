@@ -1,0 +1,72 @@
+.photo-fullscreen {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    border-radius: 0;
+
+    background: rgba(0, 0, 0, 0.5) no-repeat fixed center center;
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+    z-index: 12;
+
+    display: flex;
+    flex-direction: column;
+    cursor: zoom-out;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+
+    animation-duration: 1s;
+    animation-name: show;
+    backdrop-filter: blur(10px);
+}
+
+.photo-fullscreen > img {
+    background-color: transparent;
+    /* width: max(55%, 500px); */
+    cursor: pointer;
+    z-index: 13;
+
+    max-height: 80vh;
+    max-width: 100%;
+    object-fit: contain;
+    border-radius: 0;
+}
+
+.photo-fullscreen > div {
+    width: 30%;
+    height: 10%;
+    background-color: #fff1c6;
+    border: var(--border);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    cursor: default;
+}
+
+
+@keyframes show {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 100;
+    }
+}
+
+@media (max-width: 1200px) {
+    .photo-fullscreen > div {
+        width: max(30%, 80vw);
+    }
+}
